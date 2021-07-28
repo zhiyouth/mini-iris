@@ -12,7 +12,7 @@ describe('对 src/helpers/utils.ts 进行测试', () => {
   it('测试 assert() 执行结果是否符合预期', () => {
     expect(assert(true, '')).toBeUndefined();
     expect(() => assert(false, '')).toThrow();
-    expect(() => assert(false, 'msg')).toThrowError('[axios-miniprogram]: msg');
+    expect(() => assert(false, 'msg')).toThrowError('[mini-iris]: msg');
   });
 
   it('测试 deepMerge() 执行结果是否符合预期', () => {
@@ -42,10 +42,10 @@ describe('对 src/helpers/utils.ts 进行测试', () => {
   });
 
   it('测试 throwError() 执行结果是否符合预期', () => {
-    expect(() => throwError('')).toThrowError('[axios-miniprogram]: ');
-    expect(() => throwError('msg')).toThrowError('[axios-miniprogram]: msg');
+    expect(() => throwError('')).toThrowError('[mini-iris]: ');
+    expect(() => throwError('msg')).toThrowError('[mini-iris]: msg');
     expect(() => throwError(' msg ')).toThrowError(
-      '[axios-miniprogram]:  msg ',
+      '[mini-iris]:  msg ',
     );
   });
 

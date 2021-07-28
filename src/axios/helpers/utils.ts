@@ -50,7 +50,7 @@ export function assert(condition: boolean, msg: string) {
 }
 
 export function throwError(msg: string): void {
-  throw new Error(`[axios-miniprogram]: ${msg}`);
+  throw new Error(`[mini-iris]: ${msg}`);
 }
 
 export function toLowerCase<T extends string>(value: any, defaultValue: T): T {

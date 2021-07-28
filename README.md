@@ -1,18 +1,18 @@
-# axios-miniprogram
+# mini-iris
 
-[![npm version](https://badge.fury.io/js/axios-miniprogram.svg)](https://badge.fury.io/js/axios-miniprogram)
+[![npm version](https://badge.fury.io/js/mini-iris.svg)](https://badge.fury.io/js/mini-iris)
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
 ## 安装
 
 ```bash
-$ yarn add axios-miniprogram
+$ yarn add mini-iris
 ```
 
 或者
 
 ```bash
-$ npm i axios-miniprogram
+$ npm i mini-iris
 ```
 
 ## 简介
@@ -36,9 +36,9 @@ $ npm i axios-miniprogram
 
 ```typescript
 // esm
-import axios from 'axios-miniprogram';
+import axios from 'mini-iris';
 // cjs
-const axios = require('axios-miniprogram');
+const axios = require('mini-iris');
 // 使用
 axios('/user');
 ```
@@ -185,14 +185,14 @@ axios.get(
 
 | 参数              |           类型            | 默认值                                                       | 说明               | 全平台兼容 |
 | :---------------- | :-----------------------: | :----------------------------------------------------------- | :----------------- | :--------- |
-| adapter           |         Function          | [查看](https://github.com/early-autumn/axios-miniprogram/blob/master/src/defaults.ts) | 自定义适配器       | 是         |
+| adapter           |         Function          | [查看](https://github.com/early-autumn/mini-iris/blob/master/src/defaults.ts) | 自定义适配器       | 是         |
 | baseURL           |          String           |                                                              | 基础地址           | 是         |
 | url               |          String           |                                                              | 请求地址           | 是         |
 | method            |          String           | get                                                          | 请求方法           |            |
 | params            |          Object           |                                                              | 请求参数           | 是         |
 | data              | String/Object/ArrayBuffer |                                                              | 请求数据           | 是         |
-| headers           |          Object           | [查看](https://github.com/early-autumn/axios-miniprogram/blob/master/src/defaults.ts) | 请求头             | 是         |
-| validateStatus    |         Function          | [查看](https://github.com/early-autumn/axios-miniprogram/blob/master/src/defaults.ts) | 自定义合法状态码   | 是         |
+| headers           |          Object           | [查看](https://github.com/early-autumn/mini-iris/blob/master/src/defaults.ts) | 请求头             | 是         |
+| validateStatus    |         Function          | [查看](https://github.com/early-autumn/mini-iris/blob/master/src/defaults.ts) | 自定义合法状态码   | 是         |
 | paramsSerializer  |         Function          |                                                              | 自定义参数序列化   | 是         |
 | transformRequest  | Function/Array<.Function> |                                                              | 自定义转换请求数据 | 是         |
 | transformResponse | Function/Array<.Function> |                                                              | 自定义转换响应数据 | 是         |
@@ -405,7 +405,7 @@ instance.defaults.headers.post["Content-Type"] =
 
 ##### 配置优先顺序
 
-发送请求时，会使用默认配置`defaults`和自定义配置`config`合并出请求配置`requestConfig`，然后用合并出的请求配置`requestConfig`去发送请求，多数情况下，后者优先级要高于前者，具体合并策略可以参考 [mergeConfig.ts](https://github.com/early-autumn/axios-miniprogram/blob/master/src/core/mergeConfig.ts) 的实现。
+发送请求时，会使用默认配置`defaults`和自定义配置`config`合并出请求配置`requestConfig`，然后用合并出的请求配置`requestConfig`去发送请求，多数情况下，后者优先级要高于前者，具体合并策略可以参考 [mergeConfig.ts](https://github.com/early-autumn/mini-iris/blob/master/src/core/mergeConfig.ts) 的实现。
 
 ## 响应体`response`
 

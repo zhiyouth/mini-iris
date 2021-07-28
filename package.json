@@ -1,9 +1,9 @@
 {
-  "name": "axios-miniprogram",
+  "name": "mini-iris",
   "version": "v1.0.0",
   "description": "平台组小程序sdk",
-  "main": "dist/cjs/axios-miniprogram.js",
-  "module": "dist/esm/axios-miniprogram.js",
+  "main": "dist/cjs/mini-iris.js",
+  "module": "dist/esm/mini-iris.js",
   "types": "dist/types/index.d.ts",
   "files": [
     "dist"
@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "rollup -c rollup.config.js -w & npm run example",
-    "build": "rollup --config",
+    "build": "rollup --config && node after.build.js",
     "test": "jest --passWithNoTests",
     "lint": "eslint",
     "format": "prettier --check --write  '{src,__tests__}/**/*.{js,ts,tsx}'",
