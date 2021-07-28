@@ -1,0 +1,25 @@
+{
+  "env": "local",
+  "buildtime": {
+    "debug": true,
+    "language": "zh-CN",
+    "analyze": false,
+    "origin_server": {
+      "ip": "0.0.0.0",
+      "port": "3001",
+      "https": {
+        "enabled": false,
+        "crt": "",
+        "key": ""
+      }
+    }
+  },
+  "runtime": {
+    "api": {
+      "api1": "localhost:3999"
+    },
+    "host": {
+      "host1": "https://www.codemao.cn"
+    }
+  }
+}

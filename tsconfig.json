@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "target": "ES5",
+    "module": "esnext",
+    "sourceMap": true,
+    "strict": true,
+    "declaration": true,
+    "declarationDir": "dist/types",
+  },
+  "include": ["src/**/*", "global.d.ts"],
+  "exclude": ["node_modules"]
+}

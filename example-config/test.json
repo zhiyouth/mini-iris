@@ -1,0 +1,19 @@
+{
+  "env": "test",
+  "buildtime": {
+    "cdnPath": "https://static-platform.codemao.cn/iris/",
+    "originServer": {
+      "ip": "0.0.0.0",
+      "port": "5000"
+    },
+    "sourceMap": "https://localhost:5000/",
+    "analyze": false,
+    "dropConsole": false,
+    "hot": false,
+    "https": false,
+    "debug": true
+  },
+  "runtime": {
+    "iris_env": "api-test"
+  }
+}

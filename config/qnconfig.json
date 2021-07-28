@@ -1,0 +1,16 @@
+{
+  "src_dir": "/usr/src/app/build",
+  "bucket": "static-platform",
+  "key_prefix": "iris/",
+  "ignore_dir": false,
+  "overwrite": true,
+  "check_exists": true,
+  "check_hash": false,
+  "check_size": false,
+  "rescan_local": true,
+  "skip_suffixes": ".map,.map.gz",
+  "log_level": "info",
+  "log_rotate": 1,
+  "log_stdout": false,
+  "file_type": 0
+}
