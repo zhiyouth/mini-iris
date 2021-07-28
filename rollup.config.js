@@ -31,15 +31,6 @@ const plugins = [
   }),
   filterEmptyLines(),
 ];
-const banner = `/**
- * @name ${pkg.name}
- * @version ${pkg.version}
- * @description ${pkg.description}
- * @date ${dayjs().format('YYYY-MM-DD')}
- * @author ${pkg.author}
- * @github ${pkg.repository.url.replace('git+', '')}
- * @issues ${pkg.bugs.url}
- */`;
 
 function resolveOutputFilePath(format) {
   return path.resolve(distPath, format, `${pkg.name}.js`);
@@ -54,7 +45,6 @@ function generateConfig(format) {
       name: pkg.name,
       exports: 'default',
       indent: false,
-      banner,
     },
     plugins,
   };
