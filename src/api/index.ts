@@ -1,2 +1,4 @@
-const c = 1;
-export default c;
+import LoginRegisterApi from "./login-register";
+export {
+  LoginRegisterApi
+};

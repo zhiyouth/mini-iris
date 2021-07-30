@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const currentFilePath = './dist/cjs/mini-iris.js';
+const currentFilePath = './dist/esm/mini-iris.js';
 
 const targetFilePath = '../wechat-demo/sdk/mini-iris.js';
 deleteFile(targetFilePath)

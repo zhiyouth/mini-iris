@@ -43,7 +43,7 @@ function generateConfig(format) {
       file: resolveOutputFilePath(format),
       format,
       name: pkg.name,
-      exports: 'default',
+      // exports: 'default',
       indent: false,
     },
     plugins,
