@@ -1,4 +1,5 @@
 import { Config } from '../../config'
+import { TypeStorageData } from '../type';
 import { TypePlatFormName } from './type';
 
 let _miniIrisConfig: Config;
@@ -31,10 +32,32 @@ export const setGlobalData = (globalData: TypeGlobalData) => {
   _globalData = globalData;
 }
 
-export const getStorage = () => {
-  console.log('返回本地缓存');
+export const getStorage = (key: string):string => {
+  switch (getPlatformName()) {
+    case 'wx': {
+      return getPlatform().getStorageSync(key);
+    }
+    default: {
+      return '';
+    }
+  }
 }
 
-export const setStorage = () => {
-  console.log('设置本地缓存');
+export const setStorage = (storageData: TypeStorageData) => {
+  switch (getPlatformName()) {
+    case 'wx': {
+      getPlatform().setStorage(storageData)
+    }
+  }
+}
+
+export const setToken = (token: string) => {
+  setStorage({
+    key: `${getMiniIrisConfig().env}-mini-iris-token`,
+    data: token,
+  })
+}
+
+export const getToken = () => {
+  return getStorage(`${getMiniIrisConfig().env}-mini-iris-token`)
 }

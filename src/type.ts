@@ -5,3 +5,8 @@ export type TypeEntryConfigs = {
   name: string;
   pid: string;
 }
+
+export type TypeStorageData = {
+  key: string;
+  data: string;
+}
