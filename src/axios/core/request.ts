@@ -36,7 +36,7 @@ export function request<TData = any>(
 ): Promise<AxiosResponse<TData>> {
   return new Promise((resolve, reject) => {
     assert(isFunction(config.adapter), 'adapter 需要是一个 function');
-
+    console.log(config, 'ccc')
     const adapterConfig: AxiosAdapterRequestConfig = {
       ...config,
       url: config.url ?? '',

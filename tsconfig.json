@@ -12,6 +12,7 @@
     "strict": true,
     "declaration": true,
     "declarationDir": "dist/types",
+    "resolveJsonModule": true,
   },
   "include": ["src/**/*", "global.d.ts"],
   "exclude": ["node_modules"]

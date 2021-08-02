@@ -1,2 +1,2 @@
-const b = 1;
-export default b;
+import { version } from '../package.json'
+export const getSDKVersion = () => version;

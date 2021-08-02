@@ -18,3 +18,15 @@ export const getPlatformName = ():TypePlatFormName => _platformName;
 export const setPlatformName = (platformName: TypePlatFormName) => {
   _platformName = platformName;
 }
+
+type TypeGlobalData = {
+  isInit?: boolean;
+}
+
+let _globalData: TypeGlobalData = {
+  isInit: false,
+};
+export const getGlobalData = ():TypeGlobalData => _globalData;
+export const setGlobalData = (globalData: TypeGlobalData) => {
+  _globalData = globalData;
+}

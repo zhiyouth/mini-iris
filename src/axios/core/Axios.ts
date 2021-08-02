@@ -24,7 +24,7 @@ export type AxiosRequestMethod =
   | AxiosAdapterRequestMethod
   | AxiosRequestMethodAlias;
 
-export type AxiosRequestHeaders = AnyObject;
+export type AxiosRequestHeaders = any;
 
 export type AxiosRequestParams = AnyObject;
 

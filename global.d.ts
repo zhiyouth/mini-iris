@@ -7,8 +7,11 @@ declare const qq: any;
 declare const qh: any;
 declare const ks: any;
 declare const dd: any;
-
 declare interface AnyObject<T = any> {
   [key: string]: T;
   [key: number]: T;
+}
+declare module "*.json" {
+  const jsonValue: any;
+  export default jsonValue;
 }
