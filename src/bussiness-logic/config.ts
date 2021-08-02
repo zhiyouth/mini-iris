@@ -30,3 +30,11 @@ export const getGlobalData = ():TypeGlobalData => _globalData;
 export const setGlobalData = (globalData: TypeGlobalData) => {
   _globalData = globalData;
 }
+
+export const getStorage = () => {
+  console.log('返回本地缓存');
+}
+
+export const setStorage = () => {
+  console.log('设置本地缓存');
+}
