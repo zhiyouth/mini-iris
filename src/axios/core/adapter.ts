@@ -1,5 +1,5 @@
 import { setPlatform, setPlatformName } from 'root/src/bussiness-logic/config';
-import { TypePlatFormName } from 'root/src/bussiness-logic/type';
+import { mapPlateformToPlateFormName } from 'root/src/bussiness-logic/util';
 import {
   isEmptyArray,
   isFunction,
@@ -17,21 +17,6 @@ import {
   AxiosResponse,
   AxiosResponseError,
 } from './Axios';
-
-const mapPlateformToPlateFormName = (_index: number):TypePlatFormName => {
-  switch (_index) {
-    case 1: return 'uni';
-    case 2: return 'wx';
-    case 3: return 'my';
-    case 4: return 'swan';
-    case 5: return 'tt';
-    case 6: return 'qq';
-    case 7: return 'qh';
-    case 8: return 'ks';
-    case 9: return 'dd';
-    default: return '';
-  }
-}
 
 export type AxiosAdapterRequestType = 'request' | 'download' | 'upload';
 
