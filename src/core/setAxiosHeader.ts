@@ -1,5 +1,6 @@
 import axios from "../axios";
-import { getSDKVersion } from "../utils";
+import { getSDKVersion } from "../bussiness-logic/util";
+
 export const setAxiosHeader = (params: AnyObject) => {
   const { name, pid } = params;
   // 这里不可以是中文，会报错

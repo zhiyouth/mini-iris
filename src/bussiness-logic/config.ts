@@ -1,6 +1,5 @@
 import { Config } from '../../config'
-import { TypeStorageData } from '../type';
-import { TypePlatFormName } from './type';
+import { TypePlatFormName } from '../types/bussiness-logic/config';
 
 let _miniIrisConfig: Config;
 export const getMiniIrisConfig = () => _miniIrisConfig;
@@ -30,34 +29,4 @@ let _globalData: TypeGlobalData = {
 export const getGlobalData = ():TypeGlobalData => _globalData;
 export const setGlobalData = (globalData: TypeGlobalData) => {
   _globalData = globalData;
-}
-
-export const getStorage = (key: string):string => {
-  switch (getPlatformName()) {
-    case 'wx': {
-      return getPlatform().getStorageSync(key);
-    }
-    default: {
-      return '';
-    }
-  }
-}
-
-export const setStorage = (storageData: TypeStorageData) => {
-  switch (getPlatformName()) {
-    case 'wx': {
-      getPlatform().setStorage(storageData)
-    }
-  }
-}
-
-export const setToken = (token: string) => {
-  setStorage({
-    key: `${getMiniIrisConfig().env}-mini-iris-token`,
-    data: token,
-  })
-}
-
-export const getToken = () => {
-  return getStorage(`${getMiniIrisConfig().env}-mini-iris-token`)
 }

@@ -1,51 +1,15 @@
 import axios from '../axios';
 import { getMiniIrisConfig } from '../bussiness-logic/config';
+import {
+  TypeBindPhoneNumber,
+  TypeBindPhoneNumberByEncryptedData,
+  TypeGetCaptchaByPhoneNumber,
+  TypeLoginByThirdParty,
+  TypeRegisterByPhoneNumberEncryptedData,
+  TypeSendPhoneCaptcha,
+  TypeStub,
+} from '../types/api/login-register';
 
-type TypeStub = {
-  agreement_ids: number[];
-  appid: string;
-  code: string;
-  encrypted_data: string;
-  iv: string;
-  pid: string;
-}
-
-type TypeRegisterByPhoneNumberEncryptedData = {
-  encryptedData?: string;
-  iv?: string;
-  oauth_ticket?: string;
-  wechatMiniprogramToken?: string;
-}
-
-type TypeGetCaptchaByPhoneNumber = {
-  oauth_ticket: string;
-  phone_number: string;
-  pid?: string;
-}
-
-type TypeLoginByThirdParty = {
-  oauth_ticket: string;
-  captcha?: string;
-  auth_version?: string;
-}
-
-type TypeBindPhoneNumberByEncryptedData = {
-  appid?: string;
-  encryptedData?: string;
-  iv?: string;
-  wechatMiniprogramToken?: string;
-}
-
-type TypeSendPhoneCaptcha = {
-  phone_number: string;
-  pid?: string;
-}
-
-type TypeBindPhoneNumber = {
-  phone_number: string;
-  captcha: string;
-}
- 
 class LoginRegisterApi {
   // 第三方认证 已存在账号则直接给登陆态 账号不存在则返回 oauth_ticket，用于后续激活
   // 接口文档 https://interface.codemao.cn/project/1286/interface/api/157693
