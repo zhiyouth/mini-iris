@@ -4,9 +4,6 @@ import { TypeStorageData } from '../types/global';
 import { getGlobalData, getMiniIrisConfig, getPlatform, getPlatformName } from './config';
 export const getSDKVersion = () => version;
 export const getStorage = (key: string):string => {
-  if(!getGlobalData().isInit) {
-    throw new Error('没有int')
-  }
   switch (getPlatformName()) {
     case 'wx': {
       return getPlatform().getStorageSync(key);
@@ -26,6 +23,7 @@ export const setStorage = (storageData: TypeStorageData) => {
 }
 
 export const setToken = (token: string) => {
+  judgeIsInit();
   setStorage({
     key: `${getMiniIrisConfig().env}-mini-iris-token`,
     data: token,
@@ -33,6 +31,7 @@ export const setToken = (token: string) => {
 }
 
 export const getToken = () => {
+  judgeIsInit();
   return getStorage(`${getMiniIrisConfig().env}-mini-iris-token`)
 }
 
@@ -48,5 +47,11 @@ export const mapPlateformToPlateFormName = (_index: number):TypePlatFormName => 
     case 8: return 'ks';
     case 9: return 'dd';
     default: return '';
+  }
+}
+
+export const judgeIsInit = () => {
+  if(!getGlobalData().isInit) {
+    throw new Error('没有int')
   }
 }
