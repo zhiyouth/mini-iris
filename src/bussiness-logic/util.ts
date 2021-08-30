@@ -1,4 +1,5 @@
 import { version } from '../../package.json'
+import { MiniIrisError } from '../core/error';
 import { TypePlatFormName } from '../types/bussiness-logic/config';
 import { TypeStorageData } from '../types/global';
 import { getGlobalData, getMiniIrisConfig, getPlatform, getPlatformName } from './config';
@@ -52,6 +53,6 @@ export const mapPlateformToPlateFormName = (_index: number):TypePlatFormName => 
 
 export const judgeIsInit = () => {
   if(!getGlobalData().isInit) {
-    throw new Error('没有int')
+    throw new MiniIrisError('没有初始化MiniIris, 请先初始化MiniIris, 示例MiniIris.init({...})');
   }
 }
